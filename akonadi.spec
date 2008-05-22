@@ -4,10 +4,10 @@ Summary:	Akonadi
 Summary(pl.UTF-8):	Akonadi
 Name:		akonadi
 Version:	0.80.0
-Release:	0.%{_rel}.2
+Release:	1.%{_rel}.2
 License:	GPL v2
 Group:		X11/Applications
-Source0:	%{name}-%{version}.%{_rel}.tar.bz2
+Source0:	ftp://robert74.one.pl/PLD_th/%{name}-%{version}.%{_rel}.tar.bz2
 # Source0-md5:	453e11a6083798d6f7ee4e662cc83426
 URL:		http://pim.kde.org/akonadi/
 BuildRequires:	QtCore-devel >= %{qtbrver}
