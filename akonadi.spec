@@ -1,14 +1,14 @@
 %define		qtbrver		4.4.0
-
+%define		_rel		809880
 Summary:	Akonadi
 Summary(pl.UTF-8):	Akonadi
 Name:		akonadi
 Version:	0.80.0
-Release:	1
+Release:	0.%{_rel}.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	ftp://ftp.kde.org/pub/kde/unstable/4.0.71/support/%{name}-%{version}.tar.bz2
-# Source0-md5:	0aba67ad18dcba35b8b1b52b9c126e1b
+Source0:	%{name}-%{version}.%{_rel}.tar.bz2
+# Source0-md5:	453e11a6083798d6f7ee4e662cc83426
 URL:		http://pim.kde.org/akonadi/
 BuildRequires:	QtCore-devel >= %{qtbrver}
 BuildRequires:	QtDBus-devel >= %{qtbrver}
@@ -40,7 +40,7 @@ Header files for akonadi.
 Pliki nagłówkowe dla akonadi.
 
 %prep
-%setup -q
+%setup -q -n %{name}
 
 %build
 install -d build
@@ -72,25 +72,26 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadi_control
 %attr(755,root,root) %{_bindir}/akonadictl
 %attr(755,root,root) %{_bindir}/akonadiserver
-%attr(755,root,root) %ghost %{_libdir}/libakonadiprivate.so.0
-%attr(755,root,root) %{_libdir}/libakonadiprivate.so.0.80.0
-%attr(755,root,root) %ghost %{_libdir}/libakonadiprotocolinternals.so.0
-%attr(755,root,root) %{_libdir}/libakonadiprotocolinternals.so.0.80.0
+%attr(755,root,root) %ghost %{_libdir}/libakonadiprivate.so.?
+%attr(755,root,root) %{_libdir}/libakonadiprivate.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libakonadiprotocolinternals.so.?
+%attr(755,root,root) %{_libdir}/libakonadiprotocolinternals.so.*.*.*
 %dir %{_datadir}/config/akonadi
 %{_datadir}/config/akonadi/mysql-global.conf
-%{_datadir}/dbus-1/interfaces/org.kde.Akonadi.Agent.Control.xml
-%{_datadir}/dbus-1/interfaces/org.kde.Akonadi.Agent.Status.xml
-%{_datadir}/dbus-1/interfaces/org.kde.Akonadi.AgentManager.xml
-%{_datadir}/dbus-1/interfaces/org.kde.Akonadi.ControlManager.xml
-%{_datadir}/dbus-1/interfaces/org.kde.Akonadi.NotificationManager.xml
-%{_datadir}/dbus-1/interfaces/org.kde.Akonadi.Resource.xml
-%{_datadir}/dbus-1/interfaces/org.kde.Akonadi.Search.xml
-%{_datadir}/dbus-1/interfaces/org.kde.Akonadi.SearchQuery.xml
-%{_datadir}/dbus-1/interfaces/org.kde.Akonadi.SearchQueryIterator.xml
-%{_datadir}/dbus-1/interfaces/org.kde.Akonadi.Server.xml
-%{_datadir}/dbus-1/interfaces/org.kde.Akonadi.Tracer.xml
-%{_datadir}/dbus-1/interfaces/org.kde.Akonadi.TracerNotification.xml
-%{_datadir}/dbus-1/services/org.kde.Akonadi.Control.service
+%{_pkgconfigdir}/akonadi.pc
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Search.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQuery.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQueryIterator.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
+%{_datadir}/dbus-1/services/org.freedesktop.Akonadi.Control.service
 %{_datadir}/mime/packages/akonadi-mime.xml
 
 %files devel
