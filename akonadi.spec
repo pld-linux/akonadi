@@ -16,6 +16,8 @@ BuildRequires:	QtNetwork-devel >= %{qtbrver}
 BuildRequires:	QtTest-devel >= %{qtbrver}
 #BuildRequires:	clucene-core-devel >= 0.9.16a-2
 BuildRequires:	cmake
+BuildRequires:	kde4-automoc
+BuildRequires:	libxslt-progs
 BuildRequires:	qt4-build >= %{qtbrver}
 BuildRequires:	qt4-qmake >= %{qtbrver}
 BuildRequires:	rpmbuild(macros) >= 1.293
