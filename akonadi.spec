@@ -9,18 +9,22 @@ License:	GPL v2
 Group:		X11/Applications
 Source0:	ftp://robert74.one.pl/PLD_th/%{name}-%{version}.%{_rel}.tar.bz2
 # Source0-md5:	453e11a6083798d6f7ee4e662cc83426
+Patch0:		%{name}-lib64.patch
 URL:		http://pim.kde.org/akonadi/
 BuildRequires:	QtCore-devel >= %{qtbrver}
 BuildRequires:	QtDBus-devel >= %{qtbrver}
 BuildRequires:	QtNetwork-devel >= %{qtbrver}
+BuildRequires:	QtSql-devel >= %{qtbrver}
 BuildRequires:	QtTest-devel >= %{qtbrver}
 #BuildRequires:	clucene-core-devel >= 0.9.16a-2
 BuildRequires:	cmake
 BuildRequires:	kde4-automoc
 BuildRequires:	libxslt-progs
+BuildRequires:	mysql
 BuildRequires:	qt4-build >= %{qtbrver}
 BuildRequires:	qt4-qmake >= %{qtbrver}
 BuildRequires:	rpmbuild(macros) >= 1.293
+BuildRequires:	shared-mime-info
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -43,6 +47,7 @@ Pliki nagłówkowe dla akonadi.
 
 %prep
 %setup -q -n %{name}
+%patch0 -p1
 
 %build
 install -d build
