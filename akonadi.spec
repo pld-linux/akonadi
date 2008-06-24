@@ -19,7 +19,7 @@ BuildRequires:	QtTest-devel >= %{qtbrver}
 BuildRequires:	cmake
 BuildRequires:	kde4-automoc
 BuildRequires:	libxslt-progs
-BuildRequires:	mysql
+#BuildRequires:	mysql
 BuildRequires:	qt4-build >= %{qtbrver}
 BuildRequires:	qt4-qmake >= %{qtbrver}
 BuildRequires:	rpmbuild(macros) >= 1.293
@@ -46,7 +46,7 @@ Pliki nagłówkowe dla akonadi.
 
 %prep
 %setup -q
-%patch0 -p1
+%patch0 -p0
 
 %build
 install -d build
