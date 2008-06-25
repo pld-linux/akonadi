@@ -17,7 +17,7 @@ BuildRequires:	QtSql-devel >= %{qtbrver}
 BuildRequires:	QtTest-devel >= %{qtbrver}
 #BuildRequires:	clucene-core-devel >= 0.9.16a-2
 BuildRequires:	cmake
-BuildRequires:	kde4-automoc
+BuildRequires:	automoc4
 BuildRequires:	libxslt-progs
 #BuildRequires:	mysql
 BuildRequires:	qt4-build >= %{qtbrver}
