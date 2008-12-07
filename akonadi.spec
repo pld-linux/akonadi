@@ -2,12 +2,12 @@
 Summary:	Akonadi
 Summary(pl.UTF-8):	Akonadi
 Name:		akonadi
-Version:	1.0.0
+Version:	1.0.80
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://akonadi.omat.nl/%{name}-%{version}.tar.bz2
-# Source0-md5:	90039928f818a55a7e2a1bf852a32f2d
+# Source0-md5:	832f65cc22a8540f048534a9b4d490a8
 URL:		http://pim.kde.org/akonadi/
 BuildRequires:	QtCore-devel >= %{qtbrver}
 BuildRequires:	QtDBus-devel >= %{qtbrver}
@@ -87,6 +87,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.DebugInterface.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Search.xml
