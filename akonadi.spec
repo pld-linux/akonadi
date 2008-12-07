@@ -44,7 +44,8 @@ Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Header files for akonadi.
+Akonadi server and infrastructure needed to build client libraries and
+applications.
 
 %description devel -l pl.UTF-8
 Pliki nagłówkowe dla akonadi.
@@ -88,7 +89,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libakonadiprotocolinternals.so.*.*.*
 %dir %{_datadir}/config/akonadi
 %{_datadir}/config/akonadi/mysql-global.conf
-%{_pkgconfigdir}/akonadi.pc
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
@@ -110,3 +110,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/libakonadiprivate.so
 %{_libdir}/libakonadiprotocolinternals.so
 %{_includedir}/akonadi
+%{_pkgconfigdir}/akonadi.pc
