@@ -1,5 +1,5 @@
 %define		qtbrver		4.4.0
-Summary:	Akonadi
+Summary:	Akonadi - The PIM Storage Service
 Summary(pl.UTF-8):	Akonadi
 Name:		akonadi
 Version:	1.0.80
@@ -26,7 +26,13 @@ BuildRequires:	shared-mime-info
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Akonadi.
+Akonadi is a personal information management (PIM) framework for KDE
+4.1 and newer. Akonadi will function as an extensible data storage for
+all PIM applications.
+
+Besides data storage, Akonadi has several other components including
+search, and a library (cache) for easy access and notification of data
+changes.
 
 %description -l pl.UTF-8
 Akonadi.
