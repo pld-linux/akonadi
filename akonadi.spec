@@ -1,6 +1,6 @@
 %define		qtbrver		4.4.0
 Summary:	Akonadi - The PIM Storage Service
-Summary(pl.UTF-8):	Akonadi
+Summary(pl.UTF-8):	Akonadi - usługa przechowywania danych dla aplikacji PIM
 Name:		akonadi
 Version:	1.0.80
 Release:	1
@@ -35,20 +35,27 @@ search, and a library (cache) for easy access and notification of data
 changes.
 
 %description -l pl.UTF-8
-Akonadi.
+Akonadi do szkielet zarządzania informacjami osobistymi (PIM) dla KDE
+w wersji 4.1 i nowszych. Działa jako rozszerzalny system
+przechowywania danych dla wszystkich aplikacji PIM.
+
+Poza przechowywaniem danych Akonadi ma kilka innych komponentów, w tym
+wyszukiwanie oraz bibliotekę (pamięć podręczną) w celu łatwego dostępu
+i powiadamiania i zmianie danych.
 
 %package devel
-Summary:	Header files for akonadi
-Summary(pl.UTF-8):	Pliki nagłówkowe dla akonadi
+Summary:	Header files for Akonadi
+Summary(pl.UTF-8):	Pliki nagłówkowe dla Akonadi
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
 
 %description devel
-Akonadi server and infrastructure needed to build client libraries and
+Header files needed to build Akonadi client libraries and
 applications.
 
 %description devel -l pl.UTF-8
-Pliki nagłówkowe dla akonadi.
+Pliki nagłówkowe do tworzenia bibliotek klienckich i aplikacji
+używających Akonadi.
 
 %prep
 %setup -q
@@ -107,7 +114,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/libakonadiprivate.so
-%{_libdir}/libakonadiprotocolinternals.so
+%attr(755,root,root) %{_libdir}/libakonadiprivate.so
+%attr(755,root,root) %{_libdir}/libakonadiprotocolinternals.so
 %{_includedir}/akonadi
 %{_pkgconfigdir}/akonadi.pc
