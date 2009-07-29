@@ -1,13 +1,13 @@
-%define		qtbrver		4.4.0
+%define		qtbrver		4.5.0
 Summary:	Akonadi - The PIM Storage Service
 Summary(pl.UTF-8):	Akonadi - usługa przechowywania danych dla aplikacji PIM
 Name:		akonadi
-Version:	1.1.2
-Release:	2
+Version:	1.2.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.akonadi-project.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	5651b02358f7d2f1c0954dfd31feafb1
+# Source0-md5:	4b04ab0b4670e1133307f7b82af46ce1
 URL:		http://pim.kde.org/akonadi/
 BuildRequires:	QtCore-devel >= %{qtbrver}
 BuildRequires:	QtDBus-devel >= %{qtbrver}
@@ -117,5 +117,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/libakonadiprivate.so
 %attr(755,root,root) %{_libdir}/libakonadiprotocolinternals.so
+%dir %{_libdir}/cmake
+%{_libdir}/cmake/Akonadi
 %{_includedir}/akonadi
 %{_pkgconfigdir}/akonadi.pc
