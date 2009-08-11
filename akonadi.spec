@@ -3,7 +3,7 @@ Summary:	Akonadi - The PIM Storage Service
 Summary(pl.UTF-8):	Akonadi - usługa przechowywania danych dla aplikacji PIM
 Name:		akonadi
 Version:	1.2.0
-Release:	4
+Release:	5
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.akonadi-project.org/%{name}-%{version}.tar.bz2
@@ -25,6 +25,7 @@ BuildRequires:	qt4-qmake >= %{qtbrver}
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	shared-mime-info
 BuildRequires:	soprano-devel
+Requires:	%{name}-libs = %{version}-%{release}
 Requires:	mysql
 Requires:	QtSql-mysql
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -51,7 +52,7 @@ i powiadamiania i zmianie danych.
 Summary:	Header files for Akonadi
 Summary(pl.UTF-8):	Pliki nagłówkowe dla Akonadi
 Group:		Development/Libraries
-Requires:	%{name} = %{version}-%{release}
+Requires:	%{name}-libs = %{version}-%{release}
 
 %description devel
 Header files needed to build Akonadi client libraries and
@@ -60,6 +61,17 @@ applications.
 %description devel -l pl.UTF-8
 Pliki nagłówkowe do tworzenia bibliotek klienckich i aplikacji
 używających Akonadi.
+
+%package libs
+Summary:	Akonadi libraries
+Summary(pl.UTF-8):	Biblioteki Akonadi
+Group:		Libraries
+
+%description libs
+Akonadi libraries.
+
+%description libs -l pl.UTF-8
+Biblioteki Akonadi.
 
 %prep
 %setup -q
@@ -87,35 +99,38 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post	-p /sbin/ldconfig
-%postun	-p /sbin/ldconfig
+%post	libs -p /sbin/ldconfig
+%postun	libs -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/akonadi_control
 %attr(755,root,root) %{_bindir}/akonadictl
 %attr(755,root,root) %{_bindir}/akonadiserver
-%attr(755,root,root) %ghost %{_libdir}/libakonadiprivate.so.?
-%attr(755,root,root) %{_libdir}/libakonadiprivate.so.*.*.*
-%attr(755,root,root) %ghost %{_libdir}/libakonadiprotocolinternals.so.?
-%attr(755,root,root) %{_libdir}/libakonadiprotocolinternals.so.*.*.*
 %dir %{_datadir}/config/akonadi
 %{_datadir}/config/akonadi/mysql-global.conf
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.DebugInterface.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Search.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQuery.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQueryIterator.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
 %{_datadir}/dbus-1/services/org.freedesktop.Akonadi.Control.service
 %{_datadir}/mime/packages/akonadi-mime.xml
+
+%files libs
+%defattr(644,root,root,755)
+%attr(755,root,root) %ghost %{_libdir}/libakonadiprivate.so.?
+%attr(755,root,root) %{_libdir}/libakonadiprivate.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/libakonadiprotocolinternals.so.?
+%attr(755,root,root) %{_libdir}/libakonadiprotocolinternals.so.*.*.*
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
 
 %files devel
 %defattr(644,root,root,755)
