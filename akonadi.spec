@@ -1,13 +1,15 @@
+%define		snap		svn1013447
 %define		qtbrver		4.5.0
 Summary:	Akonadi - The PIM Storage Service
 Summary(pl.UTF-8):	Akonadi - usługa przechowywania danych dla aplikacji PIM
 Name:		akonadi
-Version:	1.2.0
-Release:	5
+Version:	1.2.60
+Release:	0.%{snap}.1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://download.akonadi-project.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	4b04ab0b4670e1133307f7b82af46ce1
+#Source0:	http://download.akonadi-project.org/%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}-%{snap}.tar.bz2
+# Source0-md5:	7505d5a630a6400dfc49ec846e20a58d
 Patch0:		%{name}-mysqlpath.patch
 URL:		http://pim.kde.org/akonadi/
 BuildRequires:	QtCore-devel >= %{qtbrver}
@@ -129,8 +131,9 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Preprocessor.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
 
 %files devel
 %defattr(644,root,root,755)
