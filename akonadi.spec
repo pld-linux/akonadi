@@ -28,8 +28,8 @@ BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	shared-mime-info
 BuildRequires:	soprano-devel
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	mysql
 Requires:	QtSql-mysql
+Requires:	mysql
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -46,9 +46,9 @@ Akonadi do szkielet zarządzania informacjami osobistymi (PIM) dla KDE
 w wersji 4.1 i nowszych. Działa jako rozszerzalny system
 przechowywania danych dla wszystkich aplikacji PIM.
 
-Poza przechowywaniem danych Akonadi ma kilka innych komponentów, w tym
-wyszukiwanie oraz bibliotekę (pamięć podręczną) w celu łatwego dostępu
-i powiadamiania i zmianie danych.
+Poza przechowywaniem danych Akonadi ma kilka innych komponentów, w
+tym wyszukiwanie oraz bibliotekę (pamięć podręczną) w celu
+łatwego dostępu i powiadamiania i zmianie danych.
 
 %package devel
 Summary:	Header files for Akonadi
