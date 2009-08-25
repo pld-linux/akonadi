@@ -3,7 +3,7 @@ Summary:	Akonadi - The PIM Storage Service
 Summary(pl.UTF-8):	Akonadi - usługa przechowywania danych dla aplikacji PIM
 Name:		akonadi
 Version:	1.2.0
-Release:	5
+Release:	6
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.akonadi-project.org/%{name}-%{version}.tar.bz2
@@ -109,15 +109,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadiserver
 %dir %{_datadir}/config/akonadi
 %{_datadir}/config/akonadi/mysql-global.conf
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.DebugInterface.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Search.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQuery.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQueryIterator.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
-%{_datadir}/dbus-1/services/org.freedesktop.Akonadi.Control.service
 %{_datadir}/mime/packages/akonadi-mime.xml
 
 %files libs
@@ -131,6 +122,15 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.DebugInterface.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Search.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQuery.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQueryIterator.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
+%{_datadir}/dbus-1/services/org.freedesktop.Akonadi.Control.service
 
 %files devel
 %defattr(644,root,root,755)
