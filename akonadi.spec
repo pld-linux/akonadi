@@ -1,15 +1,16 @@
-%define		snap		svn1013447
+%define		snap		svn1015328
 %define		qtbrver		4.5.0
 Summary:	Akonadi - The PIM Storage Service
 Summary(pl.UTF-8):	Akonadi - usługa przechowywania danych dla aplikacji PIM
 Name:		akonadi
-Version:	1.2.60
+Version:	1.2.61
 Release:	0.%{snap}.1
 License:	GPL v2
 Group:		X11/Applications
 #Source0:	http://download.akonadi-project.org/%{name}-%{version}.tar.bz2
+# svn co svn://anonsvn.kde.org/home/kde/trunk/kdesupport/akonadi/
 Source0:	%{name}-%{version}-%{snap}.tar.bz2
-# Source0-md5:	7505d5a630a6400dfc49ec846e20a58d
+# Source0-md5:	3c2f3dc3337fab424da973ac0de3532e
 Patch0:		%{name}-mysqlpath.patch
 URL:		http://pim.kde.org/akonadi/
 BuildRequires:	QtCore-devel >= %{qtbrver}
