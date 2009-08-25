@@ -47,9 +47,9 @@ Akonadi do szkielet zarządzania informacjami osobistymi (PIM) dla KDE
 w wersji 4.1 i nowszych. Działa jako rozszerzalny system
 przechowywania danych dla wszystkich aplikacji PIM.
 
-Poza przechowywaniem danych Akonadi ma kilka innych komponentów, w
-tym wyszukiwanie oraz bibliotekę (pamięć podręczną) w celu
-łatwego dostępu i powiadamiania i zmianie danych.
+Poza przechowywaniem danych Akonadi ma kilka innych komponentów, w tym
+wyszukiwanie oraz bibliotekę (pamięć podręczną) w celu łatwego dostępu
+i powiadamiania i zmianie danych.
 
 %package devel
 Summary:	Header files for Akonadi
@@ -112,15 +112,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/akonadiserver
 %dir %{_datadir}/config/akonadi
 %{_datadir}/config/akonadi/mysql-global.conf
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.DebugInterface.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Search.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQuery.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQueryIterator.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
-%{_datadir}/dbus-1/services/org.freedesktop.Akonadi.Control.service
 %{_datadir}/mime/packages/akonadi-mime.xml
 
 %files libs
@@ -135,6 +126,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Preprocessor.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.DebugInterface.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Search.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQuery.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQueryIterator.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
+%{_datadir}/dbus-1/services/org.freedesktop.Akonadi.Control.service
+
 
 %files devel
 %defattr(644,root,root,755)
