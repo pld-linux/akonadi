@@ -1,5 +1,5 @@
-%define		snap		svn1015328
-%define		qtbrver		4.5.0
+%define		snap		svn1032993
+%define		qtbrver		4.5.2
 Summary:	Akonadi - The PIM Storage Service
 Summary(pl.UTF-8):	Akonadi - usługa przechowywania danych dla aplikacji PIM
 Name:		akonadi
@@ -10,7 +10,7 @@ Group:		X11/Applications
 #Source0:	http://download.akonadi-project.org/%{name}-%{version}.tar.bz2
 # svn co svn://anonsvn.kde.org/home/kde/trunk/kdesupport/akonadi/
 Source0:	%{name}-%{version}-%{snap}.tar.bz2
-# Source0-md5:	3c2f3dc3337fab424da973ac0de3532e
+# Source0-md5:	c37f08e705759126a3acfb3fc726073e
 Patch0:		%{name}-mysqlpath.patch
 URL:		http://pim.kde.org/akonadi/
 BuildRequires:	QtCore-devel >= %{qtbrver}
@@ -77,8 +77,8 @@ Akonadi libraries.
 Biblioteki Akonadi.
 
 %prep
-%setup -q
-%patch0 -p0
+%setup -q -n %{name}-%{version}-%{snap}
+%patch0 -p1
 
 %build
 install -d build
@@ -129,9 +129,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.DebugInterface.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Search.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQuery.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQueryIterator.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
 %{_datadir}/dbus-1/services/org.freedesktop.Akonadi.Control.service
