@@ -16,6 +16,7 @@ BuildRequires:	QtNetwork-devel >= %{qtbrver}
 BuildRequires:	QtSql-devel >= %{qtbrver}
 BuildRequires:	QtTest-devel >= %{qtbrver}
 BuildRequires:	automoc4
+BuildRequires:	boost-devel
 #BuildRequires:	clucene-core-devel >= 0.9.16a-2
 BuildRequires:	cmake >= 2.6.2
 BuildRequires:	libxslt-progs
