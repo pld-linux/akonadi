@@ -32,6 +32,7 @@ BuildRequires:	soprano-devel >= 2.3.70
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	QtSql-mysql
 Requires:	mysql
+Suggests:	virtuoso
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
