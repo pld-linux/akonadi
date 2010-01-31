@@ -1,13 +1,16 @@
-%define		qtbrver		4.5.0
+%define		snap		svn1057960
+%define		qtbrver		4.6.0
 Summary:	Akonadi - The PIM Storage Service
 Summary(pl.UTF-8):	Akonadi - usługa przechowywania danych dla aplikacji PIM
 Name:		akonadi
-Version:	1.2.1
-Release:	3
+Version:	1.3.0
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.akonadi-project.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	f9c1d000844f31c67360078ddf60bec2
+# Source0-md5:	45fe59bd301268149cb0313d54a98520
+# svn co svn://anonsvn.kde.org/home/kde/trunk/kdesupport/akonadi/
+#Source0:	%{name}-%{version}-%{snap}.tar.bz2
 Patch0:		%{name}-mysqlpath.patch
 URL:		http://pim.kde.org/akonadi/
 BuildRequires:	QtCore-devel >= %{qtbrver}
@@ -25,10 +28,10 @@ BuildRequires:	qt4-build >= %{qtbrver}
 BuildRequires:	qt4-qmake >= %{qtbrver}
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	shared-mime-info
-BuildRequires:	soprano-devel
+BuildRequires:	soprano-devel >= 2.3.70
 Requires:	%{name}-libs = %{version}-%{release}
-Requires:	mysql
 Requires:	QtSql-mysql
+Requires:	mysql
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -76,7 +79,7 @@ Biblioteki Akonadi.
 
 %prep
 %setup -q
-%patch0 -p0
+%patch0 -p1
 
 %build
 install -d build
@@ -121,17 +124,16 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Preprocessor.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Control.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.ControlManager.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.DebugInterface.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Search.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQuery.xml
-%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.SearchQueryIterator.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
 %{_datadir}/dbus-1/services/org.freedesktop.Akonadi.Control.service
+
 
 %files devel
 %defattr(644,root,root,755)
