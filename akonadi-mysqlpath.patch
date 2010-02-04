@@ -1,5 +1,17 @@
---- server/src/storage/datastore.h.old	2009-08-11 13:21:23.575567291 +0200
-+++ server/src/storage/datastore.h	2009-08-11 13:21:45.620417194 +0200
+diff -ur akonadi-1.2.61-svn1032993/server/CMakeLists.txt akonadi-1.2.61-svn1032993.new/server/CMakeLists.txt
+--- akonadi-1.2.61-svn1032993/server/CMakeLists.txt	2009-10-09 09:14:29.953090764 +0200
++++ akonadi-1.2.61-svn1032993.new/server/CMakeLists.txt	2009-10-09 09:20:01.097070759 +0200
+@@ -1,5 +1,5 @@
+ 
+-find_program( MYSQLD_EXECUTABLE mysqld /usr/sbin /usr/local/sbin /usr/libexec /usr/local/libexec /opt/mysql/libexec /usr/mysql/bin )
++find_program( MYSQLD_EXECUTABLE mysqld /sbin /usr/local/sbin /usr/libexec /usr/local/libexec /opt/mysql/libexec /usr/mysql/bin )
+ if( MYSQLD_EXECUTABLE)
+    message( STATUS "MySQL Server found." )
+ else ( MYSQLD_EXECUTABLE )
+Tylko w akonadi-1.2.61-svn1032993.new/server: CMakeLists.txt~
+diff -ur akonadi-1.2.61-svn1032993/server/src/storage/datastore.h akonadi-1.2.61-svn1032993.new/server/src/storage/datastore.h
+--- akonadi-1.2.61-svn1032993/server/src/storage/datastore.h	2009-10-09 09:14:29.819737606 +0200
++++ akonadi-1.2.61-svn1032993.new/server/src/storage/datastore.h	2009-10-09 09:19:35.436665423 +0200
 @@ -60,7 +60,7 @@
  Password=*****
  #Options=UNIX_SOCKET=/home/foo/.local/share/akonadi/db_misc/mysql.socket
@@ -9,12 +21,4 @@
  
  [QSQLITE]
  Name=/home/foo/.local/share/akonadi/akonadi.db
---- server/CMakeLists.txt.old	2009-08-11 13:18:41.682055997 +0200
-+++ server/CMakeLists.txt	2009-08-11 13:19:22.258718400 +0200
-@@ -1,5 +1,5 @@
- 
--find_program( MYSQLD_EXECUTABLE mysqld /usr/sbin /usr/local/sbin /usr/libexec /usr/local/libexec /opt/mysql/libexec )
-+find_program( MYSQLD_EXECUTABLE mysqld /sbin /usr/local/sbin /usr/libexec /usr/local/libexec /opt/mysql/libexec )
- if( MYSQLD_EXECUTABLE)
-    message( STATUS "MySQL Server found." )
- else ( MYSQLD_EXECUTABLE )
+Tylko w akonadi-1.2.61-svn1032993.new/server/src/storage: datastore.h~
