@@ -15,6 +15,7 @@ Patch0:		%{name}-mysqlpath.patch
 URL:		http://pim.kde.org/akonadi/
 BuildRequires:	QtCore-devel >= %{qtbrver}
 BuildRequires:	QtDBus-devel >= %{qtbrver}
+BuildRequires:	QtGui-devel >= %{qtbrver}
 BuildRequires:	QtNetwork-devel >= %{qtbrver}
 BuildRequires:	QtSql-devel >= %{qtbrver}
 BuildRequires:	QtTest-devel >= %{qtbrver}
@@ -23,7 +24,6 @@ BuildRequires:	boost-devel
 #BuildRequires:	clucene-core-devel >= 0.9.16a-2
 BuildRequires:	cmake >= 2.6.2
 BuildRequires:	libxslt-progs
-BuildRequires:	mysql-devel
 BuildRequires:	qt4-build >= %{qtbrver}
 BuildRequires:	qt4-qmake >= %{qtbrver}
 BuildRequires:	rpmbuild(macros) >= 1.293
