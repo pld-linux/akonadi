@@ -28,6 +28,7 @@ BuildRequires:	qt4-qmake >= %{qtbrver}
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	shared-mime-info
 BuildRequires:	soprano-devel >= 2.4.63
+BuildRequires:	sqlite3-devel >= 3.6.23
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	QtSql-mysql
 Requires:	mysql
@@ -120,6 +121,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libakonadiprivate.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libakonadiprotocolinternals.so.?
 %attr(755,root,root) %{_libdir}/libakonadiprotocolinternals.so.*.*.*
+%attr(755,root,root) %{_libdir}/qt4/plugins/sqldrivers/libqsqlite3.so
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
