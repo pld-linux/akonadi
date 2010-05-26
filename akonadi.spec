@@ -1,14 +1,14 @@
 %define		snap		svn1057960
-%define		qtbrver		4.6.2
+%define		qtbrver		4.6.1
 Summary:	Akonadi - The PIM Storage Service
 Summary(pl.UTF-8):	Akonadi - usługa przechowywania danych dla aplikacji PIM
 Name:		akonadi
-Version:	1.3.80
-Release:	1
+Version:	1.3.1
+Release:	5
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.akonadi-project.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	446389f26c8c5e40791060c8d7ac9697
+# Source0-md5:	e6eef3ed5c28d55f4b6530544e379413
 # svn co svn://anonsvn.kde.org/home/kde/trunk/kdesupport/akonadi/
 #Source0:	%{name}-%{version}-%{snap}.tar.bz2
 URL:		http://pim.kde.org/akonadi/
@@ -21,13 +21,13 @@ BuildRequires:	QtTest-devel >= %{qtbrver}
 BuildRequires:	automoc4
 BuildRequires:	boost-devel
 #BuildRequires:	clucene-core-devel >= 0.9.16a-2
-BuildRequires:	cmake >= 2.8.0
+BuildRequires:	cmake >= 2.6.2
 BuildRequires:	libxslt-progs
 BuildRequires:	qt4-build >= %{qtbrver}
 BuildRequires:	qt4-qmake >= %{qtbrver}
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	shared-mime-info
-BuildRequires:	soprano-devel >= 2.4.63
+BuildRequires:	soprano-devel >= 2.4.0.1
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	QtSql-mysql
 Requires:	mysql
@@ -107,7 +107,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_bindir}/akonadi_control
-%attr(755,root,root) %{_bindir}/akonadi_rds
 %attr(755,root,root) %{_bindir}/akonadictl
 %attr(755,root,root) %{_bindir}/akonadiserver
 %dir %{_datadir}/config/akonadi
