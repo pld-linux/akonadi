@@ -4,11 +4,13 @@ Summary:	Akonadi - The PIM Storage Service
 Summary(pl.UTF-8):	Akonadi - usługa przechowywania danych dla aplikacji PIM
 Name:		akonadi
 Version:	1.3.80
-Release:	1
+Release:	2
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://download.akonadi-project.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	446389f26c8c5e40791060c8d7ac9697
+#Source0:	http://download.akonadi-project.org/%{name}-%{version}.tar.bz2
+# temp source
+Source0:	http://ktown.kde.org/~dirk/%{name}-%{version}.tar.bz2
+# Source0-md5:	e223f1333d29d0c74ff6785a6c5bea52
 # svn co svn://anonsvn.kde.org/home/kde/trunk/kdesupport/akonadi/
 #Source0:	%{name}-%{version}-%{snap}.tar.bz2
 URL:		http://pim.kde.org/akonadi/
