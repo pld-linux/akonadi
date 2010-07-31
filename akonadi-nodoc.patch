@@ -1,7 +1,0 @@
---- CMakeLists.txt.orig	2010-07-31 12:46:16.197181502 +0200
-+++ CMakeLists.txt	2010-07-31 12:46:21.039678646 +0200
-@@ -268,4 +268,3 @@
- endif(NOT WIN32)
- 
- macro_display_feature_log()
--add_subdirectory( doc )
