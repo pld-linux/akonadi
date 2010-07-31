@@ -8,11 +8,10 @@ Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.akonadi-project.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	883f53df471f4d95b8a741b312344117
+# Source0-md5:	ed19efb982f7debd7e109cf1397d0588
 # svn co svn://anonsvn.kde.org/home/kde/trunk/kdesupport/akonadi/
 #Source0:	%{name}-%{version}-%{snap}.tar.bz2
 URL:		http://pim.kde.org/akonadi/
-Patch0:		%{name}-nodoc.patch
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	QtDBus-devel >= %{qtver}
 BuildRequires:	QtGui-devel >= %{qtver}
@@ -79,7 +78,6 @@ Biblioteki Akonadi.
 
 %prep
 %setup -q
-%patch0 -p0
 
 %build
 install -d build
