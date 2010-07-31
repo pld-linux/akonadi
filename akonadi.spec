@@ -1,33 +1,34 @@
 %define		snap		svn1057960
-%define		qtbrver		4.6.1
+%define		qtver		4.6.3
 Summary:	Akonadi - The PIM Storage Service
 Summary(pl.UTF-8):	Akonadi - usługa przechowywania danych dla aplikacji PIM
 Name:		akonadi
-Version:	1.3.90
+Version:	1.4.0
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.akonadi-project.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	3536b65df3b3d5f43f55e2f72e9a0130
+# Source0-md5:	883f53df471f4d95b8a741b312344117
 # svn co svn://anonsvn.kde.org/home/kde/trunk/kdesupport/akonadi/
 #Source0:	%{name}-%{version}-%{snap}.tar.bz2
 URL:		http://pim.kde.org/akonadi/
-BuildRequires:	QtCore-devel >= %{qtbrver}
-BuildRequires:	QtDBus-devel >= %{qtbrver}
-BuildRequires:	QtGui-devel >= %{qtbrver}
-BuildRequires:	QtNetwork-devel >= %{qtbrver}
-BuildRequires:	QtSql-devel >= %{qtbrver}
-BuildRequires:	QtTest-devel >= %{qtbrver}
+Patch0:		%{name}-nodoc.patch
+BuildRequires:	QtCore-devel >= %{qtver}
+BuildRequires:	QtDBus-devel >= %{qtver}
+BuildRequires:	QtGui-devel >= %{qtver}
+BuildRequires:	QtNetwork-devel >= %{qtver}
+BuildRequires:	QtSql-devel >= %{qtver}
+BuildRequires:	QtTest-devel >= %{qtver}
 BuildRequires:	automoc4
 BuildRequires:	boost-devel
 #BuildRequires:	clucene-core-devel >= 0.9.16a-2
-BuildRequires:	cmake >= 2.6.2
+BuildRequires:	cmake >= 2.8.0
 BuildRequires:	libxslt-progs
-BuildRequires:	qt4-build >= %{qtbrver}
-BuildRequires:	qt4-qmake >= %{qtbrver}
+BuildRequires:	qt4-build >= %{qtver}
+BuildRequires:	qt4-qmake >= %{qtver}
 BuildRequires:	rpmbuild(macros) >= 1.293
 BuildRequires:	shared-mime-info
-BuildRequires:	soprano-devel >= 2.4.0.1
+BuildRequires:	soprano-devel >= 2.4.64
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	QtSql-mysql
 Requires:	mysql
@@ -78,6 +79,7 @@ Biblioteki Akonadi.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 install -d build
@@ -121,6 +123,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libakonadiprivate.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libakonadiprotocolinternals.so.?
 %attr(755,root,root) %{_libdir}/libakonadiprotocolinternals.so.*.*.*
+%attr(755,root,root) %{_libdir}/qt4/plugins/sqldrivers/libqsqlite3.so
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
@@ -133,7 +136,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Server.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.TracerNotification.xml
 %{_datadir}/dbus-1/services/org.freedesktop.Akonadi.Control.service
-
 
 %files devel
 %defattr(644,root,root,755)
