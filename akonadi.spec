@@ -3,12 +3,12 @@
 Summary:	Akonadi - The PIM Storage Service
 Summary(pl.UTF-8):	Akonadi - usługa przechowywania danych dla aplikacji PIM
 Name:		akonadi
-Version:	1.4.3
+Version:	1.4.95
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
 Source0:	http://download.akonadi-project.org/%{name}-%{version}.tar.bz2
-# Source0-md5:	ffe61aca65dffded578bd6fae8aba6bd
+# Source0-md5:	7eba7b6725e306e7e8cce4a8f77e6ac5
 # svn co svn://anonsvn.kde.org/home/kde/trunk/kdesupport/akonadi/
 #Source0:	%{name}-%{version}-%{snap}.tar.bz2
 URL:		http://pim.kde.org/akonadi/
@@ -106,6 +106,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/akonadi_agent_launcher
+%attr(755,root,root) %{_bindir}/akonadi_agent_server
 %attr(755,root,root) %{_bindir}/akonadi_control
 %attr(755,root,root) %{_bindir}/akonadi_rds
 %attr(755,root,root) %{_bindir}/akonadictl
@@ -117,14 +119,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libs
 %defattr(644,root,root,755)
-%attr(755,root,root) %ghost %{_libdir}/libakonadiprivate.so.?
-%attr(755,root,root) %{_libdir}/libakonadiprivate.so.*.*.*
 %attr(755,root,root) %ghost %{_libdir}/libakonadiprotocolinternals.so.?
 %attr(755,root,root) %{_libdir}/libakonadiprotocolinternals.so.*.*.*
 %attr(755,root,root) %{_libdir}/qt4/plugins/sqldrivers/libqsqlite3.so
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.AgentManager.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Agent.Status.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationManager.xml
+%{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.NotificationSource.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Preprocessor.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Resource.xml
 %{_datadir}/dbus-1/interfaces/org.freedesktop.Akonadi.Tracer.xml
@@ -137,7 +138,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libakonadiprivate.so
 %attr(755,root,root) %{_libdir}/libakonadiprotocolinternals.so
 %{_libdir}/cmake/Akonadi
 %{_includedir}/akonadi
