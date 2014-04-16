@@ -96,6 +96,8 @@ cd build
 %install
 rm -rf $RPM_BUILD_ROOT
 
+install -d $RPM_BUILD_ROOT%{_libdir}/kde4/akonadi
+
 %{__make} -C build install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -121,6 +123,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files libs
 %defattr(644,root,root,755)
+%dir %{_libdir}/kde4/akonadi
 %attr(755,root,root) %ghost %{_libdir}/libakonadiprotocolinternals.so.?
 %attr(755,root,root) %{_libdir}/libakonadiprotocolinternals.so.*.*.*
 %attr(755,root,root) %{_libdir}/qt4/plugins/sqldrivers/libqsqlite3.so
