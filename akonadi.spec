@@ -11,6 +11,36 @@ Source0:	ftp://ftp.kde.org/pub/kde/stable/akonadi/src/%{name}-%{version}.tar.bz2
 # Source0-md5:	84eb2e471bd6bdfe54a2a2f1d858c07d
 # svn co svn://anonsvn.kde.org/home/kde/trunk/kdesupport/akonadi/
 #Source0:	%{name}-%{version}-%{snap}.tar.bz2
+Patch1:		0001-FindSqlite-Use-CMAKE_FLAGS-the-right-way-in-try_comp.patch
+Patch2:		0002-Do-not-enter-the-test-directories-if-AKONADI_BUILD_T.patch
+Patch3:		0003-STORE-Allow-modifying-items-tags-via-Tag-RID-or-GID.patch
+Patch4:		0004-Fix-typo-in-if-condition.patch
+Patch5:		0005-Fix-buffer-overflow-in-AKTEST_FAKESERVER_MAIN.patch
+Patch6:		0006-Don-t-crash-when-setmntent-returns-NULL.patch
+Patch7:		0007-Don-t-call-insert-from-Q_ASSERT-breaks-unit-tests-in.patch
+Patch8:		0008-Suppress-unused-variable-warnings-in-release-mode.patch
+Patch9:		0009-Test-whether-compiler-supports-all-required-C-11-fea.patch
+Patch10:	0010-prevent-starting-a-QTimer-with-a-negative-interval.patch
+Patch11:	0011-Convert-some-qDebugs-to-akDebugs.patch
+Patch12:	0012-Optimize-Reduce-the-amount-of-allocations-required-t.patch
+Patch13:	0013-Intern-entity-strings-for-table-and-column-names.patch
+Patch14:	0014-No-semicolon-after-Q_DECLARE_METATYPE.patch
+Patch15:	0015-Use-QMutexLocker-instead-of-manual-lock-unlock-calls.patch
+Patch16:	0016-Use-an-QAtomicInt-instead-of-a-plain-bool-for-Entity.patch
+Patch17:	0017-Optimize-Only-do-one-hash-lookup-to-retrieve-value-f.patch
+Patch18:	0018-Optimize-Skip-value-condition-on-invalid-flags.patch
+Patch19:	0019-Optimize-queries-Do-not-retrieve-known-key-used-in-t.patch
+Patch20:	0020-Avoid-ridiculous-amount-of-SQL-queries-by-caching-Pa.patch
+Patch21:	0021-Implement-support-for-CASE.WHEN.THEN-SQL-statements-.patch
+Patch22:	0022-Implement-cache-for-CollectionStatistics-to-signific.patch
+Patch23:	0023-Always-create-a-new-PartType-when-it-does-not-exist.patch
+Patch24:	0024-Fix-compilation-with-strict-iterators.patch
+Patch25:	0025-Avoid-repeated-calls-to-PimItem-flags-and-PimItem-ta.patch
+Patch26:	0026-Avoid-recursive-collection-listing-in-SearchHelper.patch
+Patch27:	0027-Minor-improvements-in-StatisticsCache-as-suggested-b.patch
+Patch28:	0028-Extend-imapparser-benchmark-and-keep-static-data-aro.patch
+Patch29:	0029-Reduce-the-amount-of-allocations-by-preallocating-a-.patch
+Patch30:	0030-Preallocate-a-capacity-of-16-for-the-returned-list.patch
 URL:		http://pim.kde.org/akonadi/
 BuildRequires:	QtCore-devel >= %{qtver}
 BuildRequires:	QtDBus-devel >= %{qtver}
@@ -78,6 +108,36 @@ Biblioteki Akonadi.
 
 %prep
 %setup -q
+%patch1 -p1
+%patch2 -p1
+%patch3 -p1
+%patch4 -p1
+%patch5 -p1
+%patch6 -p1
+%patch7 -p1
+%patch8 -p1
+%patch9 -p1
+%patch10 -p1
+%patch11 -p1
+%patch12 -p1
+%patch13 -p1
+%patch14 -p1
+%patch15 -p1
+%patch16 -p1
+%patch17 -p1
+%patch18 -p1
+%patch19 -p1
+%patch20 -p1
+%patch21 -p1
+%patch22 -p1
+%patch23 -p1
+%patch24 -p1
+%patch25 -p1
+%patch26 -p1
+%patch27 -p1
+%patch28 -p1
+%patch29 -p1
+%patch30 -p1
 
 %build
 install -d build
