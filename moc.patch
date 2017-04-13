@@ -1,0 +1,14 @@
+diff -ur akonadi-1.13.0/server/control/agentmanager.h akonadi-1.13.0.build/server/control/agentmanager.h
+--- akonadi-1.13.0/server/control/agentmanager.h	2014-08-10 12:38:58.000000000 +0200
++++ akonadi-1.13.0.build/server/control/agentmanager.h	2017-04-13 13:24:52.690247851 +0200
+@@ -25,8 +25,10 @@
+ #include <QtCore/QMap>
+ #include <QtCore/QStringList>
+ 
++#ifndef Q_MOC_RUN
+ #include "agenttype.h"
+ #include "agentinstance.h"
++#endif
+ 
+ class QDir;
+ #ifndef QT_NO_DEBUG
